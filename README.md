@@ -35,7 +35,7 @@
 └── vendor // vendor目录
 
 ```
-##### 主要对gorm不定条件查询数据时的一个封装【灵感来于laravel项目中对db的封装[laravel版本Eloquent ORM构建]()】
+##### 主要对gorm不定条件查询数据时的一个封装【灵感来于laravel项目中对db的封装[laravel版本Eloquent ORM构建](https://www.jianshu.com/p/9896549b7f3d)】
 > 封装方法在 app/models/entity/Gorm.go文件里
 
 #### 条件说明
