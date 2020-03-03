@@ -273,7 +273,13 @@ func BuildQueryList(db *gorm.DB, wheres interface{}, columns interface{}, orderB
 	if err != nil {
 		return nil, err
 	}
-	db = db.Select(columns).Order(orderBy).Limit(rows).Offset((page - 1) * rows)
+	db = db.Select(columns)
+	if orderBy != nil && orderBy != "" {
+		db = db.Order(orderBy)
+	}
+	if page > 0 && rows > 0 {
+		db = db.Limit(rows).Offset((page - 1) * rows)
+	}
 	return db, err
 }
 
